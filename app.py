@@ -7,13 +7,14 @@ load_dotenv()  # Load environment variables from .env file
 
 app = Flask(__name__)
 # Flask-Mail Configuration
-app.config['MAIL_SERVER'] = 'smtp.gmail.com'  # SMTP server (e.g., Gmail, Outlook)
-app.config['MAIL_PORT'] = 587                 # TLS Port (587) or SSL (465)
-app.config['MAIL_USE_TLS'] = True             # Enable TLS (for security)
-app.config['MAIL_USE_SSL'] = False            # Disable SSL (use TLS instead)
+app.config['MAIL_SERVER'] = os.getenv('MAIL_SERVER')
+app.config['MAIL_PORT'] = int(os.getenv('MAIL_PORT'))  # Convert port to int
+app.config['MAIL_USE_TLS'] = os.getenv('MAIL_USE_TLS').lower() == 'true'  # Convert string to bool
+app.config['MAIL_USE_SSL'] = os.getenv('MAIL_USE_SSL').lower() == 'true'
 app.config['MAIL_USERNAME'] = os.getenv('MAIL_USERNAME')
 app.config['MAIL_PASSWORD'] = os.getenv('MAIL_PASSWORD')
 app.secret_key = os.getenv('SECRET_KEY')
+
 app.config['MAIL_DEFAULT_SENDER'] = 'roleplay@gmail.com' 
 mail = Mail(app)
 
