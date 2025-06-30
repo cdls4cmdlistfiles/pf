@@ -1,92 +1,107 @@
-
-    <style>
+<style>
+    footer {
+        background-color: #f8f8f8;
+        color: #333;
+        padding: 3rem 2rem;
+        position: relative; /* Add this */
+        overflow: hidden; /* Add this to prevent scrollbars */
+    }
+    
+    .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        position: relative; /* Add this */
+        z-index: 1; /* Ensure content stays above the background */
+    }
+    
+    .footer-col {
+        margin-bottom: 1.5rem;
+    }
+    
+    .footer-col .footer-h1 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: #333;
+    }
+    
+    .footer-col .footer-p {
+        line-height: 1.6;
+        color: #333;
+    }
+    
+    .footer-bottom {
+        max-width: 1000px;
+        margin: 2rem auto 0;
+        padding-top: 1.5rem;
+        /* border-top: 1px solid #e1e1e1; */
+        text-align: center;
+        background-color: #f8f8f8;
+        color: #333;
+        font-size: 0.9rem;
+        position: relative; /* Add this */
+        z-index: 1; /* Ensure content stays above the background */
+    }
+    
+    @media (max-width: 768px) {
+        .footer-container {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
         
         footer {
-            background-color:   #f8f8f8;
-            color: #333;
-            padding: 3rem 2rem;
-        }
-        
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-        
-        .footer-col {
-            margin-bottom: 1.5rem;
+            padding: 2rem 1.5rem;
         }
         
         .footer-col .footer-h1 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color:  #333;
+            font-size: 1.3rem;
         }
-        
-        .footer-col .footer-p {
-            line-height: 1.6;
-            color: #333;
-        }
-        
-        .footer-bottom {
-            max-width: 1200px;
-            margin: 2rem auto 0;
-            padding-top: 1.5rem;
-            border-top: 1px solid #e1e1e1;
-            text-align: center;
-            background-color: #f8f8f8;
-            color: #333;
-            font-size: 0.9rem;
-        }
-        
-        @media (max-width: 768px) {
-            .footer-container {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-            
-            footer {
-                padding: 2rem 1.5rem;
-            }
-            
-            /* .footer-col {
-            } */
-            
-            .footer-col .footer-h1 {
-                font-size: 1.3rem;
-            }
-        }
-    </style>
 
-    <footer>
-        <div class="footer-container">
-            <div class="footer-col">
-                <h1 class="footer-h1">GIAN
-                </h1>
-                <p class="footer-p"> A Minimalist Portfolio.</p>
-            </div>
-            
-             <div class="footer-col">
-                <h1 class="footer-h1">Links</h1>
-                <a target="_blank" href="https://www.facebook.com/gianisthebeast?mibextid=wwXIfr&mibextid=wwXIfr" class="footer-p">Facebook</a> <br />
-                <a target="_blank" href="https://github.com/cdls4cmdlistfiles" class="footer-p">GitHub</a>
-            </div>
 
-            <div class="footer-col">
-                <h1 class="footer-h1">Contact</h1>
-                <p class="footer-p">Email: espineda.giann@gmail.com</p>
-                <p class="footer-p">Phone: +63 9272382851 </p>
-                <p class="footer-p">Address: Phase 5 Manuyo Dos Las Piñas City</p>
-            </div>
+    }
+
+    /* Updated background icon styles */
+    .footer-container::before {
+        content: "\f121"; 
+        font-family: "Font Awesome 6 Free";
+        font-weight: 600;
+        position: absolute;
+        top: 50%;
+        right: 65%;
+        transform: translate(-50%, -50%);
+        font-size: 300px;
+        color: rgba(255, 99, 71, 0.4); /* Tomato color with transparency */
+        z-index: 0;
+        pointer-events: none; /* Prevents the icon from interfering with clicks */
+    }
+</style>
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-col">
+            <h1 class="footer-h1">GIAN</h1>
+            <p class="footer-p">A Minimalist Portfolio.</p>
         </div>
         
-        <div class="footer-bottom">
-            <p class="footer-p"> 2025 &copy; All rights reserved by 
-                <strong style="color: tomato;">
-                    Gian
-                </strong>
-            </p>
+        <div class="footer-col">
+            <h1 class="footer-h1">Links</h1>
+            <a target="_blank" href="https://www.facebook.com/gianisthebeast?mibextid=wwXIfr&mibextid=wwXIfr" class="footer-p">Facebook</a> <br />
+            <a target="_blank" href="https://github.com/cdls4cmdlistfiles" class="footer-p">GitHub</a>
         </div>
-    </footer>
+
+        <div class="footer-col">
+            <h1 class="footer-h1">Contact</h1>
+            <p class="footer-p">Email: espineda.giann@gmail.com</p>
+            <p class="footer-p">Phone: +63 9272382851</p>
+            <p class="footer-p">Address: Phase 5 Manuyo Dos Las Piñas City</p>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <p class="footer-p">2025 &copy; All rights reserved by 
+            <strong style="color: tomato;">Gian</strong>
+        </p>
+    </div>
+</footer>
