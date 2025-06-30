@@ -1,0 +1,189 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    About  
+{% endblock %}
+
+{% block content %}
+
+<div class="about-container">
+    <div class="about-image">
+        <img src="static/gian.jpg" alt="Web Developer Profile" class="responsive-img">
+    </div>
+    
+    <div class="about-text">
+        <h1 class="about-title">Hi, I'm Gian Espineda</h1>
+        <h2 class="about-subtitle">Web Development Enthusiast</h2>
+        
+        <div class="about-content">
+        <p class="about-p">I’m a recent graduate (Class of 2025) with a Bachelor's degree in Information Technology 
+            from Aemilianum  College Inc. I'm passionate about building web applications. I enjoy working with both frontend and backend technologies, including MySQL for database management. Outside of coding, I’m dedicated to fitness and spend my free time at the gym or working on personal coding projects.</p>
+                    
+            <h3 class="skills-title">My Tech Stack</h3>
+            <div class="skills-container">
+                <div class="skills-column">
+                    <h4>Frontend</h4>
+                    <ul class="about_ul">
+                        <li class="about_li">Vue.js</li>
+                        <li class="about_li">Bootstrap</li>
+                        <li class="about_li">HTMX</li>
+                        <li class="about_li">HTML/CSS</li>
+                    </ul>
+                </div>
+                <div class="skills-column">
+                    <h4>Backend</h4>
+                    <ul class="about_ul">
+                        <li class="about_li">Python/Django/Flask</li>
+                        <li class="about_li">MySQL</li>
+                        <li class="about_li">SQLite</li>
+                    </ul>
+                </div>
+            </div>
+            
+            
+            <div class="cta-buttons">
+                <!-- <a href="/projects" class="btn btn-primary">View My Work</a> -->
+                <a href="/contact" class="btn btn-secondary">Get In Touch</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+
+    /* Base styles for mobile */
+    .about-container {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .about-image {
+        width: 200px;
+        height: 200px;
+    }
+
+    .responsive-img {
+        width: 100%;
+        height: 100%;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        object-fit: fill;
+        border: 3px solid #f0f0f0;
+    }
+
+    .about-text {
+        width: 100%;
+        max-width: 800px;
+    }
+
+    .about-title {
+        font-size: 2rem;
+        margin-bottom: 5px;
+        color: #2d3748;
+    }
+
+    .about-subtitle {
+        font-size: 1.2rem;
+        color: #4a5568;
+        margin-bottom: 25px;
+        font-weight: 400;
+    }
+
+    .skills-title {
+        font-size: 1.3rem;
+        color: #2d3748;
+        margin: 25px 0 15px;
+    }
+
+    .skills-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        margin-bottom: 25px;
+    }
+
+    .skills-column {
+        flex: 1;
+        min-width: 150px;
+    }
+
+    .skills-column h4 {
+        color: #4a5568;
+        margin-bottom: 10px;
+        font-size: 1.1rem;
+    }
+
+    .skills-column .about_ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .skills-column .about_li {
+        margin-bottom: 8px;
+        position: relative;
+        padding-left: 20px;
+    }
+
+    .skills-column .about_li:before {
+        content: "▹";
+        position: absolute;
+        left: 0;
+        color: #4299e1;
+    }
+
+    .cta-buttons {
+        display: flex;
+        gap: 15px;
+        margin-top: 30px;
+        flex-wrap: wrap;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        background-color: #4299e1;
+        color: white;
+        font-weight: 500;
+        transition: all 0.3s ease;
+    }
+
+    /* Desktop styles */
+    @media (min-width: 768px) {
+        .about-container {
+            flex-direction: row;
+            align-items: flex-start;
+            padding: 40px 60px;
+            gap: 50px;
+        }
+
+        .about-image {
+            width: 250px;
+            height: 250px;
+            margin-top: 10px;
+        }
+
+        .about-title {
+            font-size: 2.5rem;
+        }
+
+        .about-subtitle {
+            font-size: 1.4rem;
+        }
+    }
+
+    /* Content styling */
+    .about-p {
+        line-height: 1.7;
+        margin-bottom: 20px;
+        color: #4a5568;
+        font-size: 1.05rem;
+    }
+</style>
+
+{% endblock %}

@@ -1,0 +1,12 @@
+<div hx-target="this" hx-swap="outerHTML" class="error">
+    <div class='form-group'>
+        <label>Email Address</label>
+        <input type="text"  name="email"
+        id='email' required value="{{ email if email }}" 
+        hx-post="/contact/email" >
+        <div class='error-message'>
+               {{ msg }}
+        </div>
+    </div>
+</div>
+
