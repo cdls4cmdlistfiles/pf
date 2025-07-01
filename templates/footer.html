@@ -3,8 +3,8 @@
         background-color: #f8f8f8;
         color: #333;
         padding: 3rem 2rem;
-        position: relative; /* Add this */
-        overflow: hidden; /* Add this to prevent scrollbars */
+        position: relative;
+        overflow: hidden;
     }
     
     .footer-container {
@@ -13,8 +13,8 @@
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: 2rem;
-        position: relative; /* Add this */
-        z-index: 1; /* Ensure content stays above the background */
+        position: relative;
+        z-index: 1;
     }
     
     .footer-col {
@@ -29,22 +29,63 @@
     
     .footer-col .footer-p {
         line-height: 1.6;
-        color: #333;
+        color: #666;
+        margin-bottom: 0.5rem;
+    }
+    
+    .footer-col a {
+        color: #666;
+        text-decoration: none;
+        transition: color 0.3s ease;
+        display: inline-block;
+        margin-bottom: 0.5rem;
+    }
+    
+    .footer-col a:hover {
+        color: tomato;
     }
     
     .footer-bottom {
-        max-width: 100%;
+        max-width: 1200px;
         margin: 2rem auto 0;
         padding-top: 1.5rem;
         border-top: 1px solid #e1e1e1;
         text-align: center;
-        background-color: #f8f8f8;
-        color: #333;
+        color: #666;
         font-size: 0.9rem;
-        position: relative; /* Add this */
-        z-index: 1; /* Ensure content stays above the background */
+        position: relative;
+        z-index: 1;
     }
     
+    /* Background icon styles - More visible on all devices */
+    .footer-container::before {
+        content: "\f121"; 
+        font-family: "Font Awesome 6 Free";
+        font-weight: 600;
+        position: absolute;
+        top: 50%;
+        right: 75%;
+        transform: translate(-50%, -50%);
+        font-size: 15rem; /* Fixed size for better control */
+        color: rgba(255, 99, 71, 0.15); /* More visible but still subtle */
+        z-index: 0;
+        pointer-events: none;
+    }
+    
+    /* Tablet styles */
+    @media (max-width: 992px) {
+        footer {
+            padding: 2.5rem 1.5rem;
+        }
+        
+        .footer-container::before {
+            font-size: 12rem;
+            left: 70%;
+            opacity: 0.2;
+        }
+    }
+    
+    /* Mobile styles */
     @media (max-width: 768px) {
         .footer-container {
             grid-template-columns: 1fr;
@@ -52,28 +93,62 @@
         }
         
         footer {
-            padding: 2rem 1.5rem;
+            padding: 2rem 1rem;
+        }
+        
+        .footer-col {
+            text-align: center;
+            margin-bottom: 1rem;
         }
         
         .footer-col .footer-h1 {
             font-size: 1.3rem;
+            margin-bottom: 0.75rem;
         }
         
+        /* Adjusted for mobile visibility */
+        .footer-container::before {
+            font-size: 8rem;
+            top: 40%;
+            left: 50%;
+            opacity: 0.15;
+        }
+        
+        .footer-bottom {
+            margin-top: 1.5rem;
+            padding-top: 1rem;
+        }
     }
-
-    /* Updated background icon styles */
-    .footer-container::before {
-        content: "\f121"; 
-        font-family: "Font Awesome 6 Free";
-        font-weight: 600;
-        position: absolute;
-        top: 60%;
-        right: 60%;
-        transform: translate(-50%, -50%);
-        font-size: 300px;
-        color: rgba(255, 99, 71, 0.8); /* Tomato color with transparency */
-        z-index: 0;
-        pointer-events: none; /* Prevents the icon from interfering with clicks */
+    
+    /* Small mobile devices */
+    @media (max-width: 480px) {
+        footer {
+            padding: 1.5rem 0.75rem;
+        }
+        
+        .footer-col .footer-h1 {
+            font-size: 1.2rem;
+        }
+        
+        .footer-col .footer-p, 
+        .footer-col a {
+            font-size: 0.9rem;
+        }
+        
+        /* Further adjustments for very small screens */
+        .footer-container::before {
+            font-size: 6rem;
+            top: 35%;
+            opacity: 0.12;
+        }
+    }
+    
+    /* Extra small devices (e.g., iPhone 5/SE) */
+    @media (max-width: 320px) {
+        .footer-container::before {
+            font-size: 5rem;
+            top: 30%;
+        }
     }
 </style>
 
@@ -86,7 +161,7 @@
         
         <div class="footer-col">
             <h1 class="footer-h1">Links</h1>
-            <a target="_blank" href="https://www.facebook.com/gianisthebeast?mibextid=wwXIfr&mibextid=wwXIfr" class="footer-p">Facebook</a> <br />
+            <a target="_blank" href="https://www.facebook.com/gianisthebeast?mibextid=wwXIfr&mibextid=wwXIfr" class="footer-p">Facebook</a>
             <a target="_blank" href="https://github.com/cdls4cmdlistfiles" class="footer-p">GitHub</a>
         </div>
 
